@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+pre_commit==4.0.1
+pyTelegramBotAPI==4.26.0
+pytest==8.3.4
+requests==2.32.3

@@ -1,0 +1,4 @@
+{
+    "welcome_message": "Welcome to the CrossFit Daily WOD Bot!",
+    "commands": ["/start", "/wod", "/days", "/refresh", "/help"]
+}

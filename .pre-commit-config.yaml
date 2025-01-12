@@ -1,0 +1,48 @@
+default_stages: [pre-commit]
+default_language_version:
+  python: python3
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: check-merge-conflict
+-   repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+      - id: black-jupyter
+-   repo: https://github.com/asottile/blacken-docs
+    rev: 1.16.0
+    hooks:
+      - id: blacken-docs
+        alias: black
+        additional_dependencies: [black]
+-   repo: https://github.com/timothycrosley/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: Run isort to sort imports in Python files
+        files: \.py$
+-   repo: https://github.com/pycqa/pydocstyle
+    rev: 6.3.0
+    hooks:
+      - id: pydocstyle
+        name: Run pydocstyle
+        args:
+          - --convention=pep257
+          - --add-ignore=D100,D102,D103,D104,D105,D107,D205,D400,D401
+-   repo: https://github.com/codespell-project/codespell
+    rev: v2.2.5
+    hooks:
+      - id: codespell
+-   repo: https://github.com/hadialqattan/pycln
+    rev: v2.2.2
+    hooks:
+      - id: pycln
+        name: Run pycln for deleting unused imports
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.1
+    hooks:
+      - id: mypy
